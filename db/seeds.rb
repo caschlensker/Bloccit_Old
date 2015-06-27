@@ -1,21 +1,31 @@
 require 'faker'
 
-# Create Posts 
-50.times do 
+# Create Posts
+50.times do
   Post.create!(
     title: Faker::Lorem.sentence,
     body: Faker::Lorem.paragraph
   )
 end
-posts = Post.all 
+posts = Post.all
 
 # Create Comments
-100.times do 
+100.times do
   Comment.create!(
-    post: posts.sample, 
+    post: posts.sample,
     body: Faker::Lorem.paragraph
   )
-end 
+end
+
+post = Post.create!(
+  title: "Unique Post",
+  body: "Unique Body"
+)
+
+Comment.create!(
+  post: post,
+  body: "Unique Comment"
+)
 
 puts "Seed finished"
 puts "#{Post.count} posts created"
