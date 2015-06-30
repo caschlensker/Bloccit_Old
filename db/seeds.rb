@@ -17,6 +17,23 @@ posts = Post.all
   )
 end 
 
+Advertisement.create!(
+  title: "This is an Advertisement!",
+  copy: "This is the body of the Advertisement!",
+  price: 5000
+  )
+Advertisement.create!(
+  title: "This is Catherine", 
+  copy: "Catherine has a body", 
+  price: 10000
+  )
+Advertisement.create!(
+  title: "This is Wednesday",
+  copy: "Wednesday is a dog",
+  price: 1500
+  )
+
+
 puts "Seed finished"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
